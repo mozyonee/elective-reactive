@@ -1,8 +1,4 @@
-# Факультатив (INIS46106U)
-
-Облік факультативів: Spring WebFlux, R2DBC, PostgreSQL, Vue 3.
-
-## Лабораторні роботи
+# Лабораторні роботи
 
 PostgreSQL: `elective`, користувач і пароль `postgres`, порт `5432`.
 
