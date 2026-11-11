@@ -2,11 +2,8 @@
 
 Облік факультативів: Spring WebFlux, R2DBC, PostgreSQL, Vue 3.
 
-Теги `lab-00` … `lab-07`. `main` — стан після лаби 7 (`lab-07`).
-
 | Тег | Зміст |
 | --- | ----- |
-| `lab-00` | старт репозиторію |
 | `lab-01` | `environment/` — звіт і скріни |
 | `lab-02` | `server/` — WebFlux, `routes.md` |
 | `lab-03` | Flyway, `tables.md` |
@@ -26,7 +23,7 @@ cd client && npm install && npm run serve # :8081
 
 Вхід у клієнті: `1111` / `1111`.
 
-## Зміни між лабами
+## Порівняння
 
 | Перехід | Compare |
 | ------- | ------- |
