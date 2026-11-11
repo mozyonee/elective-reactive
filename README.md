@@ -1,29 +1,31 @@
-# Факультатив — реактивний стек (INIS46106U)
+# Факультатив (INIS46106U)
 
-Один монорепозиторій. Теги `lab-01` … `lab-07` — **накопичувальний** стан після кожної лабораторної (не окремі папки лаб).
+Облік факультативів: Spring WebFlux, R2DBC, PostgreSQL, Vue 3.
 
-| Етап | Вміст |
-| ---- | ----- |
-| `lab-01` | `environment/` — звіт і скріни середовища |
-| `lab-02` | + `server/` — Spring WebFlux, `server/routes.md` |
-| `lab-03` | + Flyway, `server/tables.md` |
-| `lab-04` | + R2DBC/CRUD, `server/postman.md`, Postman-колекція |
-| `lab-05` | + Security, `server/security.md` |
-| `lab-06` | + `client/` — Vue 3, `client/check.md`, скріни UI |
-| `lab-07` | + `control.md` (контрольна) |
+Теги `lab-01` … `lab-07` — код після відповідної лабораторної.
 
-PostgreSQL: база `elective`, `postgres` / `postgres`, порт `5432`.
+| Тег | Зміст |
+| --- | ----- |
+| `lab-01` | `environment/` — звіт і скріни |
+| `lab-02` | `server/` — WebFlux, `routes.md` |
+| `lab-03` | Flyway, `tables.md` |
+| `lab-04` | R2DBC, `postman.md`, колекція Postman |
+| `lab-05` | Security, `security.md` |
+| `lab-06` | `client/` — Vue, `check.md` |
+| `lab-07` | `control.md` |
 
-## Запуск (теги `lab-05` … `lab-07`)
+PostgreSQL: `elective`, користувач і пароль `postgres`, порт `5432`.
+
+## Запуск
 
 ```bash
 cd server && mvn spring-boot:run          # :8080
 cd client && npm install && npm run serve # :8081
 ```
 
-Клієнт: логін `1111` / `1111`.
+Вхід у клієнті: `1111` / `1111`.
 
-## Порівняння між лабами
+## Зміни між лабами
 
 | Перехід | Compare |
 | ------- | ------- |
@@ -34,5 +36,3 @@ cd client && npm install && npm run serve # :8081
 | 5 → 6 | [lab-05...lab-06](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-05...lab-06) |
 | 6 → 7 | [lab-06...lab-07](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-06...lab-07) |
 | 1 → 7 | [lab-01...lab-07](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-01...lab-07) |
-
-Перегляд на тезі: `https://github.com/mozyonee/inis46106u-reactive-elective/tree/lab-03`
