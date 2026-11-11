@@ -1,4 +1,4 @@
-# Лабораторні роботи
+# Здачі курсу
 
 PostgreSQL: `elective`, користувач і пароль `postgres`, порт `5432`.
 
@@ -10,7 +10,9 @@ PostgreSQL: `elective`, користувач і пароль `postgres`, пор�
 | [Лабораторна 4](https://github.com/mozyonee/elective-reactive/compare/lab-03...lab-04) | R2DBC, `postman.md`, колекція Postman |
 | [Лабораторна 5](https://github.com/mozyonee/elective-reactive/compare/lab-04...lab-05) | Security, `security.md` |
 | [Лабораторна 6](https://github.com/mozyonee/elective-reactive/compare/lab-05...lab-06) | `client/`, `check.md` (Vue) |
-| [Лабораторна 7](https://github.com/mozyonee/elective-reactive/compare/lab-06...lab-07) | `control.md` |
+| [Контрольна](https://github.com/mozyonee/elective-reactive/compare/lab-06...control) | `control.md` |
+
+Гілка `main` — стан після контрольної (тег `control`).
 
 ## Запуск
 
