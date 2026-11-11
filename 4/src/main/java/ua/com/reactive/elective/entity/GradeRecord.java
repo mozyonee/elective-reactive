@@ -4,14 +4,18 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Student {
+@Table("grade_records")
+public class GradeRecord {
 
+    @Id
     private Long id;
-    private String firstName;
-    private String lastName;
+    private Long enrollmentId;
+    private Integer grade;
 }
