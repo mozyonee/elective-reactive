@@ -7,8 +7,8 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import ua.com.reactive.elective.entity.Client;
 import ua.com.reactive.elective.entity.Greeting;
+import ua.com.reactive.elective.entity.User;
 
 @Component
 public class GreetingHandler {
@@ -25,17 +25,20 @@ public class GreetingHandler {
                 .body(BodyInserters.fromValue("Main page!"));
     }
 
-    public Mono<ServerResponse> getClients(ServerRequest request) {
-        String start = request.queryParam("start").orElse("0");
-        Flux<Client> clients = Flux.just(
-                        new Client(1L, "Daniel", "Brooks", 18),
-                        new Client(2L, "Elena", "Navarro", 19),
-                        new Client(3L, "Sofia", "Berg", 20)
-                )
-                .skip(Long.parseLong(start))
-                .take(2);
+    public Mono<ServerResponse> users(ServerRequest request) {
         return ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(clients, Client.class);
+                .body(BodyInserters.fromValue("User Page"));
+    }
+
+    public Mono<ServerResponse> admin(ServerRequest request) {
+        Flux<User> users = Flux.just(
+                new User(1L, "Daniel", "1234"),
+                new User(2L, "Elena", "1234"),
+                new User(3L, "Sofia", "1234")
+        );
+        return ServerResponse.ok()
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(users, User.class);
     }
 }
