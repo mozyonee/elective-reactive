@@ -1,43 +1,38 @@
-# Технології та фреймворки реактивного програмування (INIS46106U)
+# Факультатив — реактивний стек (INIS46106U)
 
-Кожна папка — одне завдання. `description.md` — порядок виконання. `execution/` — здача. На Moodle роботу не відправляти.
+Один монорепозиторій. Теги `lab-01` … `lab-07` — **накопичувальний** стан після кожної лабораторної (не окремі папки лаб).
 
-Зведена копія коду й звітів: [main/](main/README.md) (`server/`, `client/`, `docs/`).
+| Етап | Вміст |
+| ---- | ----- |
+| `lab-01` | `environment/` — звіт і скріни середовища |
+| `lab-02` | + `server/` — Spring WebFlux, `server/routes.md` |
+| `lab-03` | + Flyway, `server/tables.md` |
+| `lab-04` | + R2DBC/CRUD, `server/postman.md`, Postman-колекція |
+| `lab-05` | + Security, `server/security.md` |
+| `lab-06` | + `client/` — Vue 3, `client/check.md`, скріни UI |
+| `lab-07` | + `control.md` (контрольна) |
 
-Предметна область лабораторних 2–6 і контрольної: система «Факультатив». База PostgreSQL `elective`, користувач `postgres`, пароль `postgres`, порт `5432`.
+PostgreSQL: база `elective`, `postgres` / `postgres`, порт `5432`.
 
-## Завдання
+## Запуск (теги `lab-05` … `lab-07`)
 
-- [01 Середовище розробки](01-середовище/description.md)
-- [02 Spring WebFlux](02-spring-webflux/description.md)
-- [03 Структура БД і Flyway](03-flyway/description.md)
-- [04 R2DBC і CRUD](04-r2dbc/description.md)
-- [05 Spring Security](05-security/description.md)
-- [06 Клієнт Vue](06-vue/description.md)
-- [07 Підсумкова контрольна, варіант 1](07-контрольна/description.md)
+```bash
+cd server && mvn spring-boot:run          # :8080
+cd client && npm install && npm run serve # :8081
+```
 
-## Версії за лабами (git-теги)
+Клієнт: логін `1111` / `1111`.
 
-Репозиторій позначено тегами `lab-01` … `lab-07`. Кожен тег — стан після відповідної лабораторної. Перегляд коду на тезі: `https://github.com/mozyonee/inis46106u-reactive-elective/tree/lab-03`
+## Порівняння між лабами
 
-Що додалось між етапами (порівняння diff):
+| Перехід | Compare |
+| ------- | ------- |
+| 1 → 2 | [lab-01...lab-02](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-01...lab-02) |
+| 2 → 3 | [lab-02...lab-03](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-02...lab-03) |
+| 3 → 4 | [lab-03...lab-04](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-03...lab-04) |
+| 4 → 5 | [lab-04...lab-05](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-04...lab-05) |
+| 5 → 6 | [lab-05...lab-06](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-05...lab-06) |
+| 6 → 7 | [lab-06...lab-07](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-06...lab-07) |
+| 1 → 7 | [lab-01...lab-07](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-01...lab-07) |
 
-| Перехід | GitHub Compare |
-| ------- | -------------- |
-| лаб 1 → 2 | [lab-01...lab-02](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-01...lab-02) |
-| лаб 2 → 3 | [lab-02...lab-03](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-02...lab-03) |
-| лаб 3 → 4 | [lab-03...lab-04](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-03...lab-04) |
-| лаб 4 → 5 | [lab-04...lab-05](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-04...lab-05) |
-| лаб 5 → 6 | [lab-05...lab-06](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-05...lab-06) |
-| лаб 6 → 7 | [lab-06...lab-07](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-06...lab-07) |
-| лаб 1 → 7 (повністю) | [lab-01...lab-07](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-01...lab-07) |
-
-## Сутності
-
-- `Teacher`: id, firstName, lastName. Таблиця `teachers`.
-- `Course`: id, title, teacherId. Таблиця `courses`.
-- `Student`: id, firstName, lastName. Таблиця `students`.
-- `Enrollment`: id, studentId, courseId. Таблиця `enrollments`.
-- `GradeRecord`: id, enrollmentId, grade (ціле 0–100). Таблиця `grade_records`.
-
-Класи `Client`, `Greeting` і `Message` зі зразків лабораторних лишаються в проєкті поруч із цими сутностями.
+Перегляд на тезі: `https://github.com/mozyonee/inis46106u-reactive-elective/tree/lab-03`
