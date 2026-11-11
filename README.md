@@ -29,10 +29,10 @@ cd client && npm install && npm run serve # :8081
 
 | Перехід | Compare |
 | ------- | ------- |
-| 1 → 2 | [lab-01...lab-02](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-01...lab-02) |
-| 2 → 3 | [lab-02...lab-03](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-02...lab-03) |
-| 3 → 4 | [lab-03...lab-04](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-03...lab-04) |
-| 4 → 5 | [lab-04...lab-05](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-04...lab-05) |
-| 5 → 6 | [lab-05...lab-06](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-05...lab-06) |
-| 6 → 7 | [lab-06...lab-07](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-06...lab-07) |
-| 1 → 7 | [lab-01...lab-07](https://github.com/mozyonee/inis46106u-reactive-elective/compare/lab-01...lab-07) |
+| 1 → 2 | [lab-01...lab-02](https://github.com/mozyonee/elective-reactive/compare/lab-01...lab-02) |
+| 2 → 3 | [lab-02...lab-03](https://github.com/mozyonee/elective-reactive/compare/lab-02...lab-03) |
+| 3 → 4 | [lab-03...lab-04](https://github.com/mozyonee/elective-reactive/compare/lab-03...lab-04) |
+| 4 → 5 | [lab-04...lab-05](https://github.com/mozyonee/elective-reactive/compare/lab-04...lab-05) |
+| 5 → 6 | [lab-05...lab-06](https://github.com/mozyonee/elective-reactive/compare/lab-05...lab-06) |
+| 6 → 7 | [lab-06...lab-07](https://github.com/mozyonee/elective-reactive/compare/lab-06...lab-07) |
+| 1 → 7 | [lab-01...lab-07](https://github.com/mozyonee/elective-reactive/compare/lab-01...lab-07) |
