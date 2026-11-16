@@ -1,0 +1,118 @@
+{
+  "info": {
+    "name": "Elective",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {"key": "base", "value": "http://localhost:8080"},
+    {"key": "teacherId", "value": ""},
+    {"key": "courseId", "value": ""},
+    {"key": "studentId", "value": ""},
+    {"key": "enrollmentId", "value": ""},
+    {"key": "gradeId", "value": ""}
+  ],
+  "item": [
+    {
+      "name": "POST /controller",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"data\": \"hello\"\n}"},
+        "url": "{{base}}/controller"
+      }
+    },
+    {
+      "name": "GET /controller",
+      "request": {"method": "GET", "url": "{{base}}/controller"}
+    },
+    {
+      "name": "POST /teachers",
+      "event": [{
+        "listen": "test",
+        "script": {"type": "text/javascript", "exec": ["const body = pm.response.json();", "pm.collectionVariables.set('teacherId', body.id);"]}
+      }],
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"firstName\": \"Olena\",\n  \"lastName\": \"Kravets\"\n}"},
+        "url": "{{base}}/teachers"
+      }
+    },
+    {
+      "name": "POST /courses",
+      "event": [{
+        "listen": "test",
+        "script": {"type": "text/javascript", "exec": ["const body = pm.response.json();", "pm.collectionVariables.set('courseId', body.id);"]}
+      }],
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"title\": \"WebFlux\",\n  \"teacherId\": {{teacherId}}\n}"},
+        "url": "{{base}}/courses"
+      }
+    },
+    {
+      "name": "POST /students",
+      "event": [{
+        "listen": "test",
+        "script": {"type": "text/javascript", "exec": ["const body = pm.response.json();", "pm.collectionVariables.set('studentId', body.id);"]}
+      }],
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"firstName\": \"Vadym\",\n  \"lastName\": \"Abakumov\"\n}"},
+        "url": "{{base}}/students"
+      }
+    },
+    {
+      "name": "POST /enrollments",
+      "event": [{
+        "listen": "test",
+        "script": {"type": "text/javascript", "exec": ["const body = pm.response.json();", "pm.collectionVariables.set('enrollmentId', body.id);"]}
+      }],
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"studentId\": {{studentId}},\n  \"courseId\": {{courseId}}\n}"},
+        "url": "{{base}}/enrollments"
+      }
+    },
+    {
+      "name": "POST /grades",
+      "event": [{
+        "listen": "test",
+        "script": {"type": "text/javascript", "exec": ["const body = pm.response.json();", "pm.collectionVariables.set('gradeId', body.id);"]}
+      }],
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"enrollmentId\": {{enrollmentId}},\n  \"grade\": 90\n}"},
+        "url": "{{base}}/grades"
+      }
+    },
+    {"name": "GET /teachers", "request": {"method": "GET", "url": "{{base}}/teachers"}},
+    {"name": "GET /courses", "request": {"method": "GET", "url": "{{base}}/courses"}},
+    {"name": "GET /students", "request": {"method": "GET", "url": "{{base}}/students"}},
+    {"name": "GET /enrollments", "request": {"method": "GET", "url": "{{base}}/enrollments"}},
+    {"name": "GET /grades", "request": {"method": "GET", "url": "{{base}}/grades"}},
+    {
+      "name": "PUT /grades/{id}",
+      "request": {
+        "method": "PUT",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"enrollmentId\": {{enrollmentId}},\n  \"grade\": 95\n}"},
+        "url": "{{base}}/grades/{{gradeId}}"
+      }
+    },
+    {"name": "DELETE /grades/{id}", "request": {"method": "DELETE", "url": "{{base}}/grades/{{gradeId}}"}},
+    {"name": "DELETE /enrollments/{id}", "request": {"method": "DELETE", "url": "{{base}}/enrollments/{{enrollmentId}}"}},
+    {"name": "DELETE /students/{id}", "request": {"method": "DELETE", "url": "{{base}}/students/{{studentId}}"}},
+    {"name": "DELETE /courses/{id}", "request": {"method": "DELETE", "url": "{{base}}/courses/{{courseId}}"}},
+    {"name": "DELETE /teachers/{id}", "request": {"method": "DELETE", "url": "{{base}}/teachers/{{teacherId}}"}},
+    {"name": "GET /teachers missing", "request": {"method": "GET", "url": "{{base}}/teachers/999999"}},
+    {"name": "GET /hello", "request": {"method": "GET", "header": [{"key": "Accept", "value": "application/json"}], "url": "{{base}}/hello"}},
+    {"name": "GET /", "request": {"method": "GET", "url": "{{base}}/"}},
+    {"name": "GET /users", "request": {"method": "GET", "url": "{{base}}/users"}},
+    {"name": "GET /clients", "request": {"method": "GET", "url": "{{base}}/clients"}}
+  ]
+}
